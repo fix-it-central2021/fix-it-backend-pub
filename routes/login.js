@@ -31,7 +31,7 @@ router.post('/',  async (req, res) => {
                      usuario: usuario
                     };
                     const token = jwt.sign(payload, app.get('llave'), {
-                     expiresIn: 2000
+                     expiresIn: 3000
                     });
 
                     return res.status(200).json({
@@ -73,7 +73,7 @@ router.post('/re_sign',  async (req, res) => {
                      usuario: usuario
                     };
                     const token = jwt.sign(payload, app.get('llave'), {
-                     expiresIn: 2000
+                     expiresIn: 3000
                     });
 
                     return res.status(200).json({
