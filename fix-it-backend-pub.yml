@@ -1,0 +1,14 @@
+openapi: '3.0.2'
+info:
+  title: Fix-It-Backend-Pub
+  version: '1.0'
+servers:
+  - url: https://api.server.test/v1
+paths:
+  /repuestos:
+    get:
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: Error
