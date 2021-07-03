@@ -14,7 +14,7 @@ ENV NODE_ENV="produccion"
 # add app
 COPY . .
 
-EXPOSE 3600
+EXPOSE 3800
 
 # start app
 CMD ["npm", "start"]
