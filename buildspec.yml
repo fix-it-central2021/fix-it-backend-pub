@@ -1,17 +1,17 @@
 --- 
-phases: 
+phases:
+  pre_build: 
+    commands: 
+      - "echo Logging in to Docker Hub..."
+      - "sudo docker login --username=\"fixitcentral2021\" --password=\"virtualizaci0n.2021\""
   build: 
     commands: 
       - "echo Building the Docker image..."
-      - "docker build -t fixitcentral2021/fix-it-backend-pub_api ."
-      - "docker tag dvohra/node-server fixitcentral2021/fix-it-backend-pub_api:latest"
+      - "sudo docker build -t fixitcentral2021/fix-it-backend-pub_api ."
+      - "sudo docker tag dvohra/node-server fixitcentral2021/fix-it-backend-pub_api:latest"
   post_build: 
     commands: 
       - "echo Build completed"
       - "echo Pushing the Docker image..."
-      - "docker push fixitcentral2021/fix-it-backend-pub_api:latest"
-  pre_build: 
-    commands: 
-      - "echo Logging in to Docker Hub..."
-      - "docker login --username=\"fixitcentral2021\" --password=\"virtualizaci0n.2021\""
+      - "sudo docker push fixitcentral2021/fix-it-backend-pub_api:latest"
 version: 0.1
