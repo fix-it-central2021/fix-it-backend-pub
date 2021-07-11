@@ -27,3 +27,13 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+    - task: ECRPushImage@1
+      inputs:
+        awsCredentials: 'aws fix-it'
+        regionName: 'us-east-1'
+        imageSource: 'imagename'
+        sourceImageName: 'fixitcentral2021/fix-it-backend-pub_api'
+        repositoryName: 'fixitcentral2021/fix-it-backend-pub_api'
+        autoCreateRepository: true
+        logRequest: true
+        logResponse: true
